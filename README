@@ -1,8 +1,9 @@
 tregisters (VIM plugin)
 
-Status:
-Experimental (extracted from http://github.com/tomtom/vimtlib)
-
-Install:
-See http://github.com/tomtom/vimtlib/blob/master/INSTALL.TXT
+Status:  Experimental
+Dependencies:
+  tlib :: http://github.com/tomtom/tlib_vim
+      > git clone git://github.com/tomtom/tlib_vim.git
+Install: See http://github.com/tomtom/vimtlib/blob/master/INSTALL.TXT
+See http://github.com/tomtom for related plugins.
 
