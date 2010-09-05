@@ -1,6 +1,6 @@
-tregisters (VIM plugin)
+tregisters (VIM plugin) -- List, edit, and run/execute registers/clipboards
 
-Status:  Experimental
+Status:  Works for me (there may be some minor quirks)
 Dependencies:
   tlib :: http://github.com/tomtom/tlib_vim
       > git clone git://github.com/tomtom/tlib_vim.git
