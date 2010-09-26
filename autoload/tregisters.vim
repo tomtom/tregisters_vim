@@ -3,8 +3,8 @@
 " @Website:     http://www.vim.org/account/profile.php?user_id=4037
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
 " @Created:     2010-01-03.
-" @Last Change: 2010-01-03.
-" @Revision:    0.0.5
+" @Last Change: 2010-09-26.
+" @Revision:    0.0.7
 
 let s:save_cpo = &cpo
 set cpo&vim
@@ -80,7 +80,7 @@ function! s:EditCallback(register, ok, text) "{{{3
             echom 'Read-only register'
         endif
     endif
-    call tlib#input#Resume("world")
+    call tlib#input#Resume("world", 0)
 endf
 
 
