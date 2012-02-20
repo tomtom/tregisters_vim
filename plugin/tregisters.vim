@@ -3,8 +3,8 @@
 " @Website:     http://www.vim.org/account/profile.php?user_id=4037
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
 " @Created:     2007-08-22.
-" @Last Change: 2010-01-03.
-" @Revision:    120
+" @Last Change: 2012-02-12.
+" @Revision:    121
 " GetLatestVimScripts: 2017 1 tregisters.vim
 
 if &cp || exists("loaded_tregisters")
@@ -23,6 +23,9 @@ set cpo&vim
 " List the registers as returned by |:reg|. You will be able to edit 
 " certain registers (see |g:tregisters_ro|).
 command! TRegisters call tregisters#List()
+
+" List only numbered registers (|quote_number|), which.
+command! TYanks call tregisters#List('0123456789')
 
 
 let &cpo = s:save_cpo

@@ -3,8 +3,8 @@
 " @Website:     http://www.vim.org/account/profile.php?user_id=4037
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
 " @Created:     2010-01-03.
-" @Last Change: 2010-09-26.
-" @Revision:    0.0.7
+" @Last Change: 2012-02-18.
+" @Revision:    0.0.11
 
 let s:save_cpo = &cpo
 set cpo&vim
@@ -30,8 +30,9 @@ if !exists('g:tregisters_handlers') "{{{2
 endif
 
 
-function! s:GetRegisters() "{{{3
-    let registers = tlib#cmd#OutputAsList('registers')
+function! s:GetRegisters(...) "{{{3
+    let regs = a:0 >= 1 && !empty(a:1) ? (' '. a:1) : ''
+    let registers = tlib#cmd#OutputAsList('registers'.regs)
     call filter(registers, 'v:val =~ ''^"''')
     call map(registers, 'substitute(v:val, ''\s\+'', " ", "g")')
     return registers
@@ -94,8 +95,9 @@ function! s:ReturnAgent(world, selected) "{{{3
 endf
 
 
-function! tregisters#List() "{{{3
-    let s:registers = s:GetRegisters()
+function! tregisters#List(...) "{{{3
+    let regs = a:0 >= 1 ? a:1 : ''
+    let s:registers = s:GetRegisters(regs)
     call tlib#input#List('s', 'Registers', s:registers, g:tregisters_handlers)
 endf
 
