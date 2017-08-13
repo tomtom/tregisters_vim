@@ -1,14 +1,15 @@
-" tregisters.vim
 " @Author:      Tom Link (mailto:micathom AT gmail com?subject=[vim])
 " @Website:     http://www.vim.org/account/profile.php?user_id=4037
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
 " @Created:     2010-01-03.
 " @Last Change: 2017-08-13.
-" @Revision:    37.0.11
+" @Revision:    12
 
-let s:save_cpo = &cpo
-set cpo&vim
 
+if !exists('loaded_tlib') || loaded_tlib < 124
+    echoerr 'tlib >= 1.24 is required'
+    finish
+endif
 
 if exists(':Tlibtrace') != 2
     command! -nargs=+ -bang Tlibtrace :
@@ -103,7 +104,3 @@ function! tregisters#List(...) "{{{3
     call tlib#input#List('s', 'Registers', s:registers, g:tregisters_handlers)
 endf
 
-
-
-let &cpo = s:save_cpo
-unlet s:save_cpo
